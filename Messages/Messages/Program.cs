@@ -18,8 +18,7 @@ namespace Messages
 
         static void Main(string[] args)
         {
-            Thread createMessages = new Thread(new ThreadStart(CreateMessages));
-            createMessages.Start();
+            CreateMessages();
 
             Console.ReadKey();
         }
@@ -41,7 +40,7 @@ namespace Messages
 
                 HandleMessage(message.Body, message.Type.ToString());
 
-                Thread.Sleep(100*random.Next(1, 6));
+                Thread.Sleep(500);
                 
             }
 
